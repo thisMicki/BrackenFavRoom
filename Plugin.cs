@@ -6,30 +6,33 @@ using UnityEngine;
 namespace BrackenFavRoom
 {
     [HarmonyPatch(typeof(FlowermanAI))]
-    
+    [HarmonyPatch("DoAIInterval")]
     class FlowermanAIPatch
     {
-        static bool errorSend = false;
+        //static bool errorSend = false;
         static GameObject SmallRoom;
         static Vector3 favRoomPos = Vector3.zero;
 
-        [HarmonyPatch("Start")]
-        static void Postfix(){
-            SmallRoom = GameObject.Find("SmallRoom2(Clone)");
-        }
+        // [HarmonyPatch("Start")]
+        // static void Postfix(){
+        //     SmallRoom = GameObject.Find("SmallRoom2(Clone)");
+        // }
 
 
-        [HarmonyPatch("DoAIInterval")]
+        
         static void Postfix(FlowermanAI __instance)
         {
+            GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)");;
+            Vector3 favRoomPos = Vector3.zero;
+
             if (SmallRoom != null)
             {
                 favRoomPos = SmallRoom.transform.position;
             }
-            else if(!errorSend)
+            else //if(!errorSend)
             {
                 Debug.LogError("BrackenFavRoom: No Backroom room found!");
-                errorSend = true;
+                //errorSend = true;
                 return;
             }
             if (__instance.favoriteSpot == null || favRoomPos == __instance.favoriteSpot.transform.position)
@@ -42,6 +45,7 @@ namespace BrackenFavRoom
     }
 
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInIncompatibility("readthisifbad-SnatchinBracken-1.2.8")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
