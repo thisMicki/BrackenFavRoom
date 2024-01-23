@@ -1,5 +1,8 @@
+## V 0.1.3
+- Added incompability flat with SnatchingBracken Mod
+
 ## V 0.1.2
-- Removed log message I accidentally left in wich spammed the console when a bracken spawned
+- Removed log message I accidentally left in which spammed the console when a bracken spawned
 - Some performance improvements
 
 ## V 0.1.1
