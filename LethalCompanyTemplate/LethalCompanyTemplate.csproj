@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <AssemblyName>BrackenFavRoom</AssemblyName>
+        <AssemblyName>thismicki.plugin.BrackenFavRoom</AssemblyName>
         <Description>Sets the Brackens favorite spot to the Backrooms room, if avalible</Description>
         <Version>0.1.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
