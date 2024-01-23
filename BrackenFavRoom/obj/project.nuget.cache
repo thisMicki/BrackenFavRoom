@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pXYxym+HgZb6jHzYyVvalabrt0uigB6xEVjUFaaangzzD7MCyfw5NJ2ppHtYeNU2igoVf+zbGEiDe3fTvqxzyQ==",
+  "dgSpecHash": "ZBNx9xFskUf62SUCcyYSObLu0wMHxqRe8P+kLPjeeFcNxb/k7ARsghg9ChCOA9dGLWEi0g16czWMeU2c5v+ZFA==",
   "success": true,
-  "projectFilePath": "D:\\LC Mods\\BrackenFavRoom\\LethalCompanyTemplate\\LethalCompanyTemplate.csproj",
+  "projectFilePath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\LethalCompanyTemplate\\LethalCompanyTemplate.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mikko\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\Mikko\\.nuget\\packages\\bepinex.assemblypublicizer.msbuild\\0.4.1\\bepinex.assemblypublicizer.msbuild.0.4.1.nupkg.sha512",
