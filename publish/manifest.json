@@ -1,0 +1,9 @@
+{
+    "name": "BrackenFavRoom",
+    "version_number": "0.1.2",
+    "website_url": "",
+    "description": "Changes the brackens favorite room to the Backrooms room, if it spawned",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}
