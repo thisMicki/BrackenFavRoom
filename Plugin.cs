@@ -25,16 +25,15 @@ namespace BrackenFavRoom
             GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)"); ;
             Vector3 favRoomPos = Vector3.zero;
 
-            if (SmallRoom != null)
+            if (SmallRoom == null)
             {
-                favRoomPos = SmallRoom.transform.position;
-            }
-            else //if(!errorSend)
-            {
+                //if(!errorSend)
                 Debug.LogError("BrackenFavRoom: No Backroom room found!");
-                //errorSend = true;
                 return;
+                
             }
+            favRoomPos = SmallRoom.transform.position;
+
             if (__instance.favoriteSpot == null || favRoomPos == __instance.favoriteSpot.transform.position)
             {
                 return;
