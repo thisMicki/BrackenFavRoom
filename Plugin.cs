@@ -19,10 +19,10 @@ namespace BrackenFavRoom
         // }
 
 
-        
+
         static void Postfix(FlowermanAI __instance)
         {
-            GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)");;
+            GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)"); ;
             Vector3 favRoomPos = Vector3.zero;
 
             if (SmallRoom != null)
@@ -36,9 +36,9 @@ namespace BrackenFavRoom
                 return;
             }
             if (__instance.favoriteSpot == null || favRoomPos == __instance.favoriteSpot.transform.position)
+            {
                 return;
-
-            Debug.Log("BrackenFavRoom: Changing the Brackens favorite spot");
+            }
             __instance.favoriteSpot.transform.position = favRoomPos;
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{favRoomPos.x}, Y:{favRoomPos.y}, Z:{favRoomPos.z}");
         }
