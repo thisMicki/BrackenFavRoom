@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D7DjD2l23avAuK5ij6CnSCckRhp2jouStYfDo1eckAIMKR4g6WlpEtBraDYbxyFikz2DEi1ckcK0UgzmXR31fQ==",
+  "dgSpecHash": "/aO50QBr/ypYQj16pWlYVdCgmPdRhqjKtBG8TvqmiD73ezKsA8vajW2MzItDJN/BJEEYjJVqfafPRw3uimKg1g==",
   "success": true,
-  "projectFilePath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
+  "projectFilePath": "D:\\LC Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mikko\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\Mikko\\.nuget\\packages\\bepinex.assemblypublicizer.msbuild\\0.4.1\\bepinex.assemblypublicizer.msbuild.0.4.1.nupkg.sha512",

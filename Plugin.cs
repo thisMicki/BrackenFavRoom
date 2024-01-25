@@ -23,7 +23,7 @@ namespace BrackenFavRoom
         static void Postfix(FlowermanAI __instance)
         {
             GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)"); ;
-            Vector3 favRoomPos = Vector3.zero;
+            Vector3 favRoomPos;
 
             if (SmallRoom == null)
             {
@@ -38,7 +38,7 @@ namespace BrackenFavRoom
             {
                 return;
             }
-            __instance.favoriteSpot.transform.position = favRoomPos;
+            __instance.favoriteSpot.SetPositionAndRotation(favRoomPos, Quaternion.Euler(Vector3.zero));
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{favRoomPos.x}, Y:{favRoomPos.y}, Z:{favRoomPos.z}");
         }
     }
