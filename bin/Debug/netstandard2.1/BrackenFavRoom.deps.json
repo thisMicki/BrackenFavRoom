@@ -14,7 +14,8 @@
           "BepInEx.Core": "5.4.21",
           "BepInEx.PluginInfoProps": "1.1.0",
           "UnityEngine.Modules": "2022.3.9",
-          "Assembly-CSharp": "0.0.0.0"
+          "Assembly-CSharp": "0.0.0.0",
+          "Unity.Netcode.Runtime": "0.0.0.0"
         },
         "runtime": {
           "BrackenFavRoom.dll": {}
@@ -389,6 +390,14 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "Unity.Netcode.Runtime/0.0.0.0": {
+        "runtime": {
+          "Unity.Netcode.Runtime.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -672,6 +681,11 @@
       "hashPath": "unityengine.modules.2022.3.9.nupkg.sha512"
     },
     "Assembly-CSharp/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Unity.Netcode.Runtime/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

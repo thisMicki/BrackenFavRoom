@@ -2744,14 +2744,14 @@
   "project": {
     "version": "0.1.1",
     "restore": {
-      "projectUniqueName": "D:\\LC Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
+      "projectUniqueName": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
       "projectName": "BrackenFavRoom",
-      "projectPath": "D:\\LC Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
+      "projectPath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
       "packagesPath": "C:\\Users\\Mikko\\.nuget\\packages\\",
-      "outputPath": "D:\\LC Mods\\BrackenFavRoom\\obj\\",
+      "outputPath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\LC Mods\\BrackenFavRoom\\NuGet.Config",
+        "D:\\LC_Mods\\Mods\\BrackenFavRoom\\NuGet.Config",
         "C:\\Users\\Mikko\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2819,7 +2819,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

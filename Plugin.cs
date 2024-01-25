@@ -19,8 +19,6 @@ namespace BrackenFavRoom
         //     SmallRoom = GameObject.Find("SmallRoom2(Clone)");
         // }
 
-
-
         static void Postfix(FlowermanAI __instance)
         {
             GameObject SmallRoom = GameObject.Find("SmallRoom2(Clone)"); ;
