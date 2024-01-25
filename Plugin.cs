@@ -2,6 +2,7 @@
 using BepInEx;
 using HarmonyLib;
 using UnityEngine;
+using Unity.Netcode;
 
 namespace BrackenFavRoom
 {
@@ -39,6 +40,8 @@ namespace BrackenFavRoom
                 return;
             }
             __instance.favoriteSpot.SetPositionAndRotation(favRoomPos, Quaternion.Euler(Vector3.zero));
+            __instance.SetDestinationToPosition(favRoomPos, true);
+
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{favRoomPos.x}, Y:{favRoomPos.y}, Z:{favRoomPos.z}");
         }
     }
