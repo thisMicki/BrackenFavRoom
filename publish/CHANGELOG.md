@@ -1,5 +1,6 @@
 ## V 0.1.3
 - Added incompability flat with SnatchingBracken Mod
+- Possibly Fixed Favorite Room position not being set correctly
 
 ## V 0.1.2
 - Removed log message I accidentally left in which spammed the console when a bracken spawned
