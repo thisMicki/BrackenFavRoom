@@ -31,5 +31,8 @@
     <Reference Include="Unity.Netcode">
         <HintPath>D:\Program Files (x86)\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.Netcode.Runtime.dll</HintPath> <!-- Edit this to the actual location -->
     </Reference>
+    <Reference Include="Unity.Netcode">
+      <HintPath>D:\Program Files (x86)\Steam\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.AIModule.dll</HintPath> <!-- Edit this to the actual location -->
+  </Reference>
 </ItemGroup>
 </Project>
