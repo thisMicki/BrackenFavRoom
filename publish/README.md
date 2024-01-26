@@ -8,6 +8,6 @@ Changes the Brackens favorite room to the Backrooms found within the Industrial 
 
 ##
 
-### Plans for the futur of this mod
+### Plans for the future of this mod
 - Make an option that makes the Backrooms spawn every time on the industrial Layout
 - Make other funny or useful Bracken related changes to the game

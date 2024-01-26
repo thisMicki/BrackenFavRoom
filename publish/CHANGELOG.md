@@ -1,4 +1,7 @@
 ## V 0.1.4
+- Fixed the fav room position to be in the center of the room instead of in front of it
+
+## V 0.1.4
 - Hopefully I finally made this mod do the one thing it's supposed to
 - Copium
 
