@@ -34,7 +34,7 @@ namespace BrackenFavRoom
     }
 
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    //[BepInIncompatibility("readthisifbad-SnatchinBracken-1.2.9")] // Something breaks when that mod is also loaded
+    [BepInIncompatibility("readthisifbad-SnatchinBracken-1.2.9")] // Something breaks when that mod is also loaded
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
