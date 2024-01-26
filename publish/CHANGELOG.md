@@ -1,3 +1,7 @@
+## V 0.1.4
+- Hopefully I finally made this mod do the one thing it's supposed to
+- Copium
+
 ## V 0.1.3
 - Added incompability flat with SnatchingBracken Mod
 - Possibly Fixed Favorite Room position not being set correctly
