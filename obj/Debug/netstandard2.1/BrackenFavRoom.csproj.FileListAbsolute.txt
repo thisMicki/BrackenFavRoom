@@ -12,3 +12,4 @@ D:\LC_Mods\Mods\BrackenFavRoom\obj\Debug\netstandard2.1\BrackenFavRoom.csproj.Co
 D:\LC_Mods\Mods\BrackenFavRoom\obj\Debug\netstandard2.1\BrackenFavRoom.dll
 D:\LC_Mods\Mods\BrackenFavRoom\obj\Debug\netstandard2.1\BrackenFavRoom.pdb
 D:\LC_Mods\Mods\BrackenFavRoom\bin\Debug\netstandard2.1\Unity.Netcode.Runtime.dll
+D:\LC_Mods\Mods\BrackenFavRoom\bin\Debug\netstandard2.1\Unity.AI.Navigation.dll
