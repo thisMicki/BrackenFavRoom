@@ -30,7 +30,7 @@ namespace BrackenFavRoom
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorit spot to it
             {
                 if (!errorSend)
-                    Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the console about that
+                    Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the user about that
                 errorSend = true;
                 return;
             }
@@ -45,9 +45,7 @@ namespace BrackenFavRoom
                 Debug.LogWarning("BrackenFavRoom: There is no path to the Backrooms from the Brackens current position");
                 return;
             }
-
-            if(__instance)
-
+            
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             __result.position = smallRoomPos;  // Change the return value of the base function
         }
