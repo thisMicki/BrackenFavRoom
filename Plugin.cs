@@ -8,6 +8,7 @@ namespace BrackenFavRoom
     class EnemyAIPatch
     {
         static GameObject smallRoom;
+        static bool errorSend = false;
 
         [HarmonyPatch("Start")] // Patch that function
         [HarmonyPostfix] // After it excecuted
@@ -24,7 +25,9 @@ namespace BrackenFavRoom
 
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorit spot to it
             {
-                Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the console about that
+                if(!errorSend)
+                    Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the console about that
+                errorSend = true;
                 return;
             }
             smallRoom.transform.Translate(new Vector3(5f, 0f, 0f)); // To move the position more to the center of the room
