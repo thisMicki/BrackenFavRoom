@@ -1,3 +1,6 @@
+## V 0.1.7
+- Fixed log spam when no Backrooms were generated
+
 ## V 0.1.6
 - Fixed minor code issues
 

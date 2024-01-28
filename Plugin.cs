@@ -21,17 +21,18 @@ namespace BrackenFavRoom
         [HarmonyPostfix] // After it excecuted
         static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
         {
+            if(!__instance.IsOwner) return; // Only the host needs to set the favorite spot, i think
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
 
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorit spot to it
             {
-                if(!errorSend)
+                if (!errorSend)
                     Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the console about that
                 errorSend = true;
                 return;
             }
             smallRoom.transform.Translate(new Vector3(5f, 0f, 0f)); // To move the position more to the center of the room
-             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
+            Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             __result = smallRoom.transform; // Change the return value of the base function
         }
     }
