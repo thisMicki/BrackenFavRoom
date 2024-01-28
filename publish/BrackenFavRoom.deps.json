@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "BrackenFavRoom/0.1.7": {
+      "BrackenFavRoom/0.1.8": {
         "dependencies": {
           "BepInEx.Analyzers": "1.0.8",
           "BepInEx.AssemblyPublicizer.MSBuild": "0.4.1",
@@ -410,7 +410,7 @@
     }
   },
   "libraries": {
-    "BrackenFavRoom/0.1.7": {
+    "BrackenFavRoom/0.1.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

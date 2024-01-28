@@ -9,5 +9,6 @@ Changes the Brackens favorite room to the Backrooms found within the Industrial 
 ##
 
 ### Plans for the future of this mod
+- Change the distance the Bracken is allowed to have to its favorite spot before dropping a dead player to be configurable
 - Make an option that makes the Backrooms spawn every time on the industrial Layout
 - Make other funny or useful Bracken related changes to the game

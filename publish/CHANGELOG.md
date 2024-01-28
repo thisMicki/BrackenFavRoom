@@ -1,3 +1,6 @@
+# V 0.1.8
+- Fixed a bug causing the favorite position to be set constantly, causing log spam
+
 ## V 0.1.7
 - The mod is now host only
 - Fixed log spam with info that the favorite spot was changed
