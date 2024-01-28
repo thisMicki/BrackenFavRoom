@@ -42,6 +42,8 @@ namespace BrackenFavRoom
 
             Vector3 favoriteSpotPos = initialPos + offset; // To move the position more to the center of the room
 
+            if(__instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
+
             Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
             if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
@@ -51,8 +53,6 @@ namespace BrackenFavRoom
                 errorSend = true;
                 return;
             }
-
-            if(__instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
 
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             __result.position = favoriteSpotPos;  // Change the return value of the base function
