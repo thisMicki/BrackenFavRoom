@@ -52,6 +52,8 @@ namespace BrackenFavRoom
                 return;
             }
 
+            if(__instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
+
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.SetPositionAndRotation(favoriteSpotPos, new Quaternion());
