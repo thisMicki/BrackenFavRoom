@@ -10,7 +10,6 @@ namespace BrackenFavRoom
     class EnemyAIPatch
     {
         static GameObject smallRoom;
-        static PlayerControllerB player;
         static bool errorSend = false;
 
         [HarmonyPatch("Start")] // Patch that function
@@ -35,8 +34,9 @@ namespace BrackenFavRoom
                 return;
             }
 
+            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(smallRoom.transform.position, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
-            if (!__instance.agent.CalculatePath(smallRoom.transform.position, path)) // Check if there is a path to the Bracken room, if there isn't and the favorit position would be set the bracken would be stuck when carrying a dead player
+            if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorit position would be set the bracken would be stuck when carrying a dead player
             {
                 Debug.LogWarning("BrackenFavRoom: There is no path to the Backrooms from the Brackens current position");
                 return;
