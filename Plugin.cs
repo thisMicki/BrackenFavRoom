@@ -36,25 +36,32 @@ namespace BrackenFavRoom
             }
 
             Vector3 initialPos = smallRoom.transform.position;
-            Vector3 initialRot = smallRoom.transform.rotation.eulerAngles;
-            float offsetZ = 7f;
-            Vector3 offset = initialRot = new Vector3(0f, 0f, offsetZ);
+            Vector3 initialRot = smallRoom.transform.forward;
+            float offsetZ = -7f;
+            Vector3 offset = initialRot * offsetZ;
 
             Vector3 favoriteSpotPos = initialPos + offset; // To move the position more to the center of the room
 
-            if(__instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
+            if (__instance.favoriteSpot != null  && __instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
 
             Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
+            
             if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
             {
-                if(!errorSend)
-                    Debug.LogWarning("BrackenFavRoom: There is no path to the Backrooms from the Brackens current position");
+                if (!errorSend)
+                {
+                    Debug.LogWarning($"BrackenFavRoom: There is no path to the Backrooms from the Brackens current position\nBrackenFavPos: X:{favoriteSpotPos.x}, Y:{favoriteSpotPos.y}, Z:{favoriteSpotPos.z}");
+                }
                 errorSend = true;
                 return;
             }
-
-            Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
+            if(__instance.favoriteSpot != null)
+                Debug.Log($"BrackenFavRoom: Brackens favorite was X:{__instance.favoriteSpot.transform.position.x}, Y:{__instance.favoriteSpot.transform.position.y}, Z:{__instance.favoriteSpot.transform.position.z}");
+            Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{favoriteSpotPos.x}, Y:{favoriteSpotPos.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.SetPositionAndRotation(favoriteSpotPos, new Quaternion());
+            cube.transform.localScale = new Vector3(2f, 2f, 2f);
             __result.position = favoriteSpotPos;  // Change the return value of the base function
         }
     }
