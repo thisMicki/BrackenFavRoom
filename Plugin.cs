@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using GameNetcodeStuff;
 using HarmonyLib;
 using UnityEngine;
@@ -41,7 +42,9 @@ namespace BrackenFavRoom
 
             Vector3 favoriteSpotPos = initialPos + offset; // To move the position more to the center of the room
 
-            if (__instance.favoriteSpot != null && __instance.favoriteSpot.position == favoriteSpotPos) return; // We don't need to change the position all the time
+            if (__instance.favoriteSpot != null) return; // We don't need to change the position all the time
+
+            if (Vector3.Distance(__instance.favoriteSpot.position, favoriteSpotPos) > .5f) return; // To not set the position again with a slight margin of error for rounding and stuff
 
             Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
