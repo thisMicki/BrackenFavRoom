@@ -1,6 +1,8 @@
 ﻿using BepInEx;
+using GameNetcodeStuff;
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace BrackenFavRoom
 {
@@ -8,6 +10,7 @@ namespace BrackenFavRoom
     class EnemyAIPatch
     {
         static GameObject smallRoom;
+        static PlayerControllerB player;
         static bool errorSend = false;
 
         [HarmonyPatch("Start")] // Patch that function
@@ -21,7 +24,7 @@ namespace BrackenFavRoom
         [HarmonyPostfix] // After it excecuted
         static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
         {
-            if(!__instance.IsOwner) return; // Only the host needs to set the favorite spot, i think
+            if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot, i think
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
 
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorit spot to it
@@ -31,6 +34,14 @@ namespace BrackenFavRoom
                 errorSend = true;
                 return;
             }
+
+            NavMeshPath path = new NavMeshPath();
+            if (!__instance.agent.CalculatePath(smallRoom.transform.position, path)) // Check if there is a path to the Bracken room, if there isn't and the favorit position would be set the bracken would be stuck when carrying a dead player
+            {
+                Debug.LogWarning("BrackenFavRoom: There is no path to the Backrooms from the Brackens current position");
+                return;
+            }
+
             smallRoom.transform.Translate(new Vector3(5f, 0f, 0f)); // To move the position more to the center of the room
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             __result = smallRoom.transform; // Change the return value of the base function
