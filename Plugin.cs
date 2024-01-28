@@ -3,6 +3,7 @@ using GameNetcodeStuff;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 namespace BrackenFavRoom
 {
@@ -34,7 +35,10 @@ namespace BrackenFavRoom
                 return;
             }
 
-            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(smallRoom.transform.position, RoundManager.Instance.navHit, 1.75f, -1);
+            Vector3 smallRoomPos = smallRoom.transform.position;
+            smallRoomPos.x += 5; // To move the position more to the center of the room
+
+            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(smallRoomPos, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
             if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorit position would be set the bracken would be stuck when carrying a dead player
             {
@@ -42,9 +46,10 @@ namespace BrackenFavRoom
                 return;
             }
 
-            smallRoom.transform.Translate(new Vector3(5f, 0f, 0f)); // To move the position more to the center of the room
+            if(__instance)
+
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
-            __result = smallRoom.transform; // Change the return value of the base function
+            __result.position = smallRoomPos;  // Change the return value of the base function
         }
     }
 
