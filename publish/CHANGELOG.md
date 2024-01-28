@@ -1,6 +1,6 @@
 ## V 0.1.7
 - Fixed log spam when no Backrooms were generated
-- Fixed an issue where the Bracken would be stuck when holding a player due to no path to its favorit room being avalible
+- Fixed an issue where the Bracken would be stuck when holding a player due to no path to its favorite room being avalible
 - Fixed Backrroms being moved instead of the favorite position of the bracken
 
 ## V 0.1.6

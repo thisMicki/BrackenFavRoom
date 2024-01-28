@@ -24,10 +24,10 @@ namespace BrackenFavRoom
         [HarmonyPostfix] // After it excecuted
         static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
         {
-            if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot, i think
+            if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
 
-            if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorit spot to it
+            if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorite spot to it
             {
                 if (!errorSend)
                     Debug.LogWarning("BrackenFavRoom: No Backroom room found!"); // Also warn the user about that
@@ -35,19 +35,25 @@ namespace BrackenFavRoom
                 return;
             }
 
-            Vector3 smallRoomPos = smallRoom.transform.position;
-            smallRoomPos.x += 5; // To move the position more to the center of the room
+            Vector3 initialPos = smallRoom.transform.position;
+            Vector3 initialRot = smallRoom.transform.rotation.eulerAngles;
+            float offsetZ = 7f;
+            Vector3 offset = initialRot = new Vector3(0f, 0f, offsetZ);
 
-            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(smallRoomPos, RoundManager.Instance.navHit, 1.75f, -1);
+            Vector3 favoriteSpotPos = initialPos + offset; // To move the position more to the center of the room
+
+            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
             NavMeshPath path = new NavMeshPath();
-            if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorit position would be set the bracken would be stuck when carrying a dead player
+            if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
             {
                 Debug.LogWarning("BrackenFavRoom: There is no path to the Backrooms from the Brackens current position");
                 return;
             }
-            
+
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{smallRoom.transform.position.x}, Y:{smallRoom.transform.position.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
-            __result.position = smallRoomPos;  // Change the return value of the base function
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.SetPositionAndRotation(favoriteSpotPos, new Quaternion());
+            __result.position = favoriteSpotPos;  // Change the return value of the base function
         }
     }
 
