@@ -1,3 +1,6 @@
+## V 0.1.6
+- Fixed minor code issues
+
 ## V 0.1.5
 - Fixed the fav room position to be in the center of the room instead of in front of it
 
