@@ -1,4 +1,7 @@
-# V 0.1.8
+## V 0.1.9
+- Fixed a bug where the distance calculation was broken, causing the favorite position to be set constantly
+
+## V 0.1.8
 - Fixed a bug causing the favorite position to be set constantly, causing log spam
 
 ## V 0.1.7

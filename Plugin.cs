@@ -16,8 +16,9 @@ namespace BrackenFavRoom
 
         [HarmonyPatch("Start")] // Patch that function
         [HarmonyPostfix] // After it excecuted
-        static void StartPatch() // Start just runs once and its better to find the Backrooms just once so I put it here
+        static void StartPatch(EnemyAI __instance) // Start just runs once and its better to find the Backrooms just once so I put it here
         {
+            if (__instance is not FlowermanAI) return;
             smallRoom = GameObject.Find("SmallRoom2(Clone)"); // The Backroom is called "SmallRoom2" in game and when spawned it gets the "(Clone)" attached so it needs to be added here as well
         }
 
