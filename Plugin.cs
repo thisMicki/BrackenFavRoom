@@ -45,11 +45,8 @@ namespace BrackenFavRoom
 
             if (__instance.favoriteSpot != null)  // We don't need to change the position all the time
                 if (Vector3.Distance(__instance.favoriteSpot.position, favoriteSpotPos) < .5f) return; // To not set the position again with a slight margin of error for rounding and stuff
-            
-            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
-            NavMeshPath path = new NavMeshPath();
 
-            if (!__instance.agent.CalculatePath(navMeshPos, path)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
+            if (!CheckForPath(favoriteSpotPos, __instance)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
             {
                 if (!errorSend)
                 {
@@ -62,6 +59,14 @@ namespace BrackenFavRoom
                 Debug.Log($"BrackenFavRoom: Brackens favorite was X:{__instance.favoriteSpot.transform.position.x}, Y:{__instance.favoriteSpot.transform.position.y}, Z:{__instance.favoriteSpot.transform.position.z}");
             Debug.Log($"BrackenFavRoom: Changed Brackens favorite spot to X:{favoriteSpotPos.x}, Y:{favoriteSpotPos.y}, Z:{smallRoom.transform.position.z}"); // say in the console that the poition has been changed
             __result.position = favoriteSpotPos;  // Change the return value of the base function
+        }
+
+        static bool CheckForPath(Vector3 favoriteSpotPos, EnemyAI __instance)
+        {
+            Vector3 navMeshPos = RoundManager.Instance.GetNavMeshPosition(favoriteSpotPos, RoundManager.Instance.navHit, 1.75f, -1);
+            NavMeshPath path = new NavMeshPath();
+
+            return __instance.agent.CalculatePath(navMeshPos, path); // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
         }
     }
 
