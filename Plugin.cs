@@ -24,7 +24,7 @@ namespace BrackenFavRoom
 
         [HarmonyPatch("ChooseFarthestNodeFromPosition")] // Patch that function
         [HarmonyPostfix] // After it excecuted
-        static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result, ref Vector3 ___mainEntrancePosition) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
+        static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result) // __instance is the current instance of the class "EnemyAI" and __result is the return value from the base function
         {
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
             if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot
@@ -52,7 +52,8 @@ namespace BrackenFavRoom
                 {
                     Debug.LogWarning($"BrackenFavRoom: No path to the Backrooms from the Brackens current position");
                     Debug.Log($"BrackenFavPos: Choosing new favorite spot...");
-                    __instance.ChooseFarthestNodeFromPosition(___mainEntrancePosition);
+                    Vector3 mainEntrancePosition = RoundManager.FindMainEntrancePosition(false, false);
+                    __instance.ChooseFarthestNodeFromPosition(mainEntrancePosition);
                 }
                 errorSend = true;
                 return;

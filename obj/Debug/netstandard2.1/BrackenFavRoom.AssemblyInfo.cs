@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Change the brackes favorite spot to the Backrooms")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.9.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.9+9bd28789328e5cee9dff3337a37e4970d8c567c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.9+6079f500e52540f195b23a3b03ebda535dd76910")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrackenFavRoom")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrackenFavRoom")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.9.0")]
