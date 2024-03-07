@@ -1,3 +1,6 @@
+## V 0.2.0
+- The Bracken now chooses a new favorite spot in case the current one is unreachable, but switches back to the Bracken Room as soon as a path is avalible
+
 ## V 0.1.9
 - Fixed a bug where the distance calculation was broken, causing the favorite position to be set constantly
 
