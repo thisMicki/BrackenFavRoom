@@ -28,7 +28,7 @@ namespace BrackenFavRoom
         {
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
             if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot
-            Debug.Log("BrackenFavRoom: yeee");
+            // Debug.Log("BrackenFavRoom: yeee");
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorite spot to it
             {
                 if (!errorSend)
