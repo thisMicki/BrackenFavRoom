@@ -398,14 +398,6 @@
             "fileVersion": "0.0.0.0"
           }
         }
-      },
-      "Unity.AI.Navigation/0.0.0.0": {
-        "runtime": {
-          "Unity.AI.Navigation.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
       }
     }
   },
@@ -694,11 +686,6 @@
       "sha512": ""
     },
     "Unity.Netcode.Runtime/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Unity.AI.Navigation/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

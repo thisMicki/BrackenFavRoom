@@ -24,11 +24,11 @@ namespace BrackenFavRoom
 
         [HarmonyPatch("ChooseFarthestNodeFromPosition")] // Patch that function
         [HarmonyPostfix] // After it excecuted
-        static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
+        static void ChooseFarthestNodeFromPositionPatch(EnemyAI __instance, ref Transform __result, ref Vector3 ___mainEntrancePosition) // __instance is acting the class "EnemyAI" and __result is the return value from the base function
         {
             if (__instance is not FlowermanAI) return; // If this script is not attached to a Bracken, it shouldn't change the output
             if (!__instance.IsOwner) return; // Only the host needs to set the favorite spot
-
+            Debug.Log("BrackenFavRoom: yeee");
             if (smallRoom == null) // If there is no Backrooms spawned in, there is no need to try and change the Brackens favorite spot to it
             {
                 if (!errorSend)
@@ -43,14 +43,16 @@ namespace BrackenFavRoom
 
             Vector3 favoriteSpotPos = initialPos + offset; // To move the position more to the center of the room
 
-            if (__instance.favoriteSpot != null)  // We don't need to change the position all the time
+            if (__instance.favoriteSpot != null)
                 if (Vector3.Distance(__instance.favoriteSpot.position, favoriteSpotPos) < .5f) return; // To not set the position again with a slight margin of error for rounding and stuff
 
             if (!CheckForPath(favoriteSpotPos, __instance)) // Check if there is a path to the Bracken room, if there isn't and the favorite position would be set the bracken would be stuck when carrying a dead player
             {
                 if (!errorSend)
                 {
-                    Debug.LogWarning($"BrackenFavRoom: There is no path to the Backrooms from the Brackens current position\nBrackenFavPos: X:{favoriteSpotPos.x}, Y:{favoriteSpotPos.y}, Z:{favoriteSpotPos.z}");
+                    Debug.LogWarning($"BrackenFavRoom: No path to the Backrooms from the Brackens current position");
+                    Debug.Log($"BrackenFavPos: Choosing new favorite spot...");
+                    __instance.ChooseFarthestNodeFromPosition(___mainEntrancePosition);
                 }
                 errorSend = true;
                 return;

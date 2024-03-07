@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/micki/Documents/GitHub/BrackenFavRoom/BrackenFavRoom.csproj": {}
+    "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj": {}
   },
   "projects": {
-    "/home/micki/Documents/GitHub/BrackenFavRoom/BrackenFavRoom.csproj": {
+    "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj": {
       "version": "0.1.9",
       "restore": {
-        "projectUniqueName": "/home/micki/Documents/GitHub/BrackenFavRoom/BrackenFavRoom.csproj",
+        "projectUniqueName": "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj",
         "projectName": "BrackenFavRoom",
-        "projectPath": "/home/micki/Documents/GitHub/BrackenFavRoom/BrackenFavRoom.csproj",
-        "packagesPath": "/home/micki/.nuget/packages/",
-        "outputPath": "/home/micki/Documents/GitHub/BrackenFavRoom/obj/",
+        "projectPath": "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj",
+        "packagesPath": "C:\\Users\\Mikko\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\BrackenFavRoom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/micki/Documents/GitHub/BrackenFavRoom/NuGet.Config",
-          "/home/micki/.nuget/NuGet/NuGet.Config"
+          "D:\\Github\\BrackenFavRoom\\NuGet.Config",
+          "C:\\Users\\Mikko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.bepinex.dev/v3/index.json": {}
         },
@@ -80,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
