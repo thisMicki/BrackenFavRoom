@@ -12,6 +12,7 @@ namespace BrackenFavRoom
     class EnemyAIPatch
     {
         static GameObject smallRoom;
+        static Vector3 mainEntrancePosition = Vector3.zero;
         static bool errorSend = false;
 
         [HarmonyPatch("Start")] // Patch that function
@@ -51,12 +52,17 @@ namespace BrackenFavRoom
                 if (!errorSend)
                 {
                     Debug.LogWarning($"BrackenFavRoom: No path to the Backrooms from the Brackens current position");
-                    Debug.Log($"BrackenFavPos: Choosing new favorite spot...");
-                    Vector3 mainEntrancePosition = RoundManager.FindMainEntrancePosition(false, false);
-                    __instance.ChooseFarthestNodeFromPosition(mainEntrancePosition);
+                    errorSend = true;
+                    return;
                 }
-                errorSend = true;
-                return;
+                
+                if(__instance.favoriteSpot.position != mainEntrancePosition)
+                {
+                    Debug.Log($"BrackenFavPos: Choosing new favorite spot...");
+                    mainEntrancePosition = RoundManager.FindMainEntrancePosition(false, false);
+                    __instance.ChooseFarthestNodeFromPosition(mainEntrancePosition);
+                    errorSend = false;
+                }
             }
             if (__instance.favoriteSpot != null)
                 Debug.Log($"BrackenFavRoom: Brackens favorite was X:{__instance.favoriteSpot.transform.position.x}, Y:{__instance.favoriteSpot.transform.position.y}, Z:{__instance.favoriteSpot.transform.position.z}");

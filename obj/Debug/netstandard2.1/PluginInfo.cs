@@ -4,6 +4,6 @@ namespace BrackenFavRoom
     {
         public const string PLUGIN_GUID = "BrackenFavRoom";
         public const string PLUGIN_NAME = "BrackenFavRoom";
-        public const string PLUGIN_VERSION = "0.2.0";
+        public const string PLUGIN_VERSION = "0.2.2";
     }
 }

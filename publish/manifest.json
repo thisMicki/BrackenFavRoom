@@ -1,6 +1,6 @@
 {
     "name": "BrackenFavRoom",
-    "version_number": "0.2.0",
+    "version_number": "0.2.2",
     "website_url": "https://github.com/thisMicki/BrackenFavRoom",
     "description": "Changes the brackens favorite room to the Backrooms room, if it spawned",
     "dependencies": [

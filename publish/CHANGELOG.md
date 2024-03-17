@@ -1,3 +1,9 @@
+## V 0,2,2
+- Fixed the Bracken only choosing the new favorite spot once
+
+## V 0.2.1
+- Fixed readme because links don't work
+
 ## V 0.2.0
 - The Bracken now chooses a new favorite spot in case the current one is unreachable, but switches back to the Bracken Room as soon as a path is avalible
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj": {}
+    "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj": {}
   },
   "projects": {
-    "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj": {
-      "version": "0.1.9",
+    "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj": {
+      "version": "0.2.2",
       "restore": {
-        "projectUniqueName": "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj",
+        "projectUniqueName": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
         "projectName": "BrackenFavRoom",
-        "projectPath": "D:\\Github\\BrackenFavRoom\\BrackenFavRoom.csproj",
+        "projectPath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\BrackenFavRoom.csproj",
         "packagesPath": "C:\\Users\\Mikko\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\BrackenFavRoom\\obj\\",
+        "outputPath": "D:\\LC_Mods\\Mods\\BrackenFavRoom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\Github\\BrackenFavRoom\\NuGet.Config",
+          "D:\\LC_Mods\\Mods\\BrackenFavRoom\\NuGet.Config",
           "C:\\Users\\Mikko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
