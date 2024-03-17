@@ -1,4 +1,4 @@
-## V 0,2,2
+## V 0.2.2
 - Fixed the Bracken only choosing the new favorite spot once
 
 ## V 0.2.1
